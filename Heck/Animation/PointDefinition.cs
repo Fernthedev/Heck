@@ -51,7 +51,7 @@ namespace Heck.Animation
 
                 Functions easing = Functions.easeLinear;
                 bool spline = false;
-                List<string> flags = rawPoint.SafeCast<string>().ToList();
+                List<string> flags = rawPoint.OfType<string>().ToList();
 
                 string? easingString = (string?)flags.FirstOrDefault(s => s.StartsWith("ease"));
 
@@ -153,8 +153,6 @@ namespace Heck.Animation
 
             return c;
         }
-
-
 
         /// <summary>
         /// Does most of the interpolation magic between points
